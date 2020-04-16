@@ -1,0 +1,87 @@
+{% extends "user/base.html" %}
+{% load static %}
+{% load widget_tweaks %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+
+<div class="col-lg-4 col-md-6 col-sm-8 ml-auto mr-auto">
+    <form class="form" method="POST" action="#">
+        {% csrf_token %}
+
+        <div class="card card-login card-hidden">
+            <div class="card-header card-header-primary text-center">
+                <h4 class="card-title">Sign In</h4>
+                <p class="card-description text-center" style="color:#ffffff;">Please fill in the following details</p>
+            </div>
+
+            <!-- ERRORS -->
+            <div>
+                {% if form.errors %}
+                <div class="row ">
+                    <div class="col-md-12">
+                        <div class="errormsg">
+                            {% for field in form %}
+                            {% for error in field.errors %}
+                            <p>
+                                <center>
+                                    <h4>{{ error }}<h4>
+                                </center>
+                            </p>
+                            {% endfor %}
+                            {% endfor %}
+                            {% for error in form.non_field_errors %}
+                            <p>
+                                <center>
+                                    <h4>{{ error }}<h4>
+                                </center>
+                            </p>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+            <!-- ERRORS -->
+
+
+            <div class="card-body ">
+                <span class="bmd-form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="material-icons">
+                                    phone
+                                </i>
+                            </span>
+                        </div>
+                        {{ form.username|add_class:"form-control"|append_attr:"placeholder:Phone Number"}}
+                    </div>
+                </span>
+                <span class="bmd-form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="material-icons">lock_outline</i>
+                            </span>
+                        </div>
+                        {{ form.password|add_class:"form-control"|append_attr:"placeholder:Password"}}
+                    </div>
+                </span>
+            </div>
+
+
+            <p class="text-center"><a href="{% url 'password_reset' %}" class="fgpass">Forgot Password?</a></p>
+
+            <div class="card-footer justify-content-center">
+                <form method="POST" novalidate>
+                    <button class="btn btn-login btn-link btn-lg">Let's Go</button>
+                </form>
+            </div>
+
+            <p class="text-center">Don't have an account? <a href="{% url 'register' %}" class="fgpass">Sign Up</a></a>
+            </p>
+        </div>
+    </form>
+</div>
+{% endblock %}

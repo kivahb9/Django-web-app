@@ -1,0 +1,350 @@
+ # def clean(self, *args, *keyworgs):
+    #     cleaned_data = self.cleaned_data.gender()
+
+    # def form_valid(self, form):
+    #     if self.request.user.is_authenticated:
+    #         form.instance.user = self.request.user
+    #     return super(SignUpRegistrationCreateView, self).form_valid(form)
+
+    # if self.request.user.is_authenticated:
+    #     form.instance.user = self.request.user
+    # return super().form_valid(form)
+    # 
+
+
+# def signup_registration_view(request):
+#     if request.method == "POST":
+#         form = SignUpRegistrationForm(request.POST)
+#         if form.is_valid():
+#             form.save()
+#             messages.success(request, f"Details successfully submited!")
+#             return redirect("skill")
+#     else:
+#         form = SignUpRegistrationForm()
+#     return render(request, "user/signupregistration.html", {"form": form})
+
+
+def form_valid(request):
+        if request.method == "POST":
+            form = SignUpRegistrationForm(request.POST)
+            if form.is_valid():
+                form.save()
+                messages.success(request, f"Details successfully submited!")
+            return redirect("skill")
+        else:
+            form = SignUpRegistrationForm()
+        return render(request, "user/signupregistration.html", {"form": form})
+
+
+
+    Making the checkbox mandatory
+    # def validate_agreementbooleanfield(self):
+    #     value = self.cleaned_data.get("agreement")
+    #     if not value:
+    #         raise forms.ValidationError("This field is required.")
+    #     return value
+
+
+
+
+
+<div
+                                                                <div class="col-lg-3 col-sm-4">
+                                                                <div class="form-file-upload form-file-multiple">
+                                                                        <div class="input-group">
+                                                                                <div class="form-group">
+                                                                                        <input
+                                                                                                type={{ form.resume|add_class:"form-control inputFileVisible inputFileHidden"|append_attr:"placeholder:Attach resume"}}>
+                                                                                                <span class="input-group-btn">
+                                                                                <button type="button"
+                                                                                        class="btn btn-link btn-fab">
+                                                                                        <i
+                                                                                                class="material-icons">attach_file</i>
+                                                                                </button>
+                                                                        </span>
+                                                                                </div>
+                                                                        </div>
+                                                                </div>
+                                                </div>
+                                                {{ form.resume|add_class:"form-control inputFileVisible"|append_attr:"placeholder:Resume.."}}
+                                                <div class="col-lg-3 col-sm-4">
+                                                        <div class="form-group form-file-upload form-file-multiple">
+                                                                <input type="file" multiple="" class="inputFileHidden">
+                                                                <div class="input-group">
+                                                                        <input type="text"
+                                                                                class="form-control inputFileVisible"
+                                                                                placeholder="Attached Resume">
+                                                                        <span class="input-group-btn">
+                                                                                <button type="button"
+                                                                                        class="btn btn-link btn-fab">
+                                                                                        <i
+                                                                                                class="material-icons">attach_file</i>
+                                                                                </button>
+                                                                        </span>
+                                                                </div>
+                                                        </div>
+                                                </div>
+
+
+
+
+# def challenges(request):
+#     return render(request, "challenges/challenge.html", {})
+
+
+# def challengesview(request):
+#     return render(request, "challenges/challenges_view.html", {})
+
+
+# path("challenges_view", ChallengesDetailView.as_view(), name="challenges_view"),
+
+
+
+class ChallengesDetailView(DetailView):
+    model = Challenges
+    template_name = "challenges/challenges_view.html"  # <app>/<model>_<viewtype>.html
+
+
+
+class ChallengesListView(ListView):
+    model = Challenges
+    template_name = "challenges/challenge.html"
+    context = {}
+    challenge = Challenges.objects.all()
+    context['challenge'] = challenge
+
+
+
+{% for challenge in challenges %}
+{{challenge.challenge_inputfile}}
+{% endfor %}
+
+
+
+# def download(request):
+#     file_path = os.path.join(settings.MEDIA_ROOT, "egg_wholesale_prices.xlsx")
+#     if os.path.exists(file_path):
+#         with open(file_path, "r") as fh:
+#             response = HttpResponse(fh.read(), content_type="application/vnd.ms-excel")
+#             response["Content-Disposition"] = "inline; filename=" + os.path.basename(
+#                 file_path
+#             )
+#             return response
+#     raise Http404
+
+
+# def download(request, challenge_inputfile):
+#     file_path = settings.MEDIA_ROOT + "/" + challenge_inputfile
+#     file_wrapper = FileWrapper(file(file_path, "rb"))
+#     file_mimetype = mimetypes.guess_type(file_path)
+#     response = HttpResponse(file_wrapper, content_type=file_mimetype)
+#     response["X-Sendfile"] = file_path
+#     response["Content-Length"] = os.stat(file_path).st_size
+#     response["Content-Disposition"] = "attachment; filename=%s/" % smart_str(
+#         challenge_inputfile
+#     )
+#     return response
+
+
+def download(request, ChallengesName):
+    file_path = settings.MEDIA_ROOT + "/" + ChallengesName
+    file_wrapper = FileWrapper(file(file_path, "rb"))
+    file_mimetype = mimetypes.guess_type(file_path)
+    response = HttpResponse(file_wrapper, content_type=file_mimetype)
+    response["X-Sendfile"] = file_path
+    response["Content-Length"] = os.stat(file_path).st_size
+    response["Content-Disposition"] = "attachment; ChallengesName=%s" % smart_str(
+        ChallengesName
+    )
+    return response
+
+  $(document).ready(function () {
+    var href = $('.cssbuttongo').attr('href');
+    window.location.href = href; //causes the browser to refresh and load the requested url
+  });
+});
+
+
+
+
+<a class="author float-left" href="#pablo">
+                            <div class="avatar">
+                              <img class="media-object" alt="64x64" src="assets/img/faces/kendall.jpg">
+                            </div>
+                          </a>
+                          <div class="media-body">
+                            <textarea class="form-control" placeholder="Write a nice reply or go home..."
+                              rows="4"></textarea>
+                            <div class="media-footer">
+                              <button type="Post" name="value" class="btn btn-primary float-right" id="value"
+                                value=" Post">
+                                <i class="material-icons">reply</i> Reply
+                                </a>
+                            </div>
+                          </div>
+
+
+
+def uploadproject(request):
+    if request.method == "POST":
+        form = UploadProjectForm(request.POST or None)
+        if form.is_valid():
+            details = request.POST.get("details")
+            submission = request.POST.get("submission")
+            user_id = request.POST.get("user_id")
+            if user_id:
+                uploadproject = UploadProject.objects.create(
+                    user=request.user, details=details, submission=submission
+                )
+                uploadproject.save()
+                return HttpResponseRedirect(reverse_lazy("cha:challenge"))
+        else:
+            return render(request, "challenges/uploadproject.html")
+    else:
+        form = UploadProjectForm()
+    context = {"form": form}
+    return render(request, "challenges/uploadproject.html", context)
+
+
+
+
+# response = HttpResponse(mimetype="application/force-download")
+    # response["Content-Disposition"] = "attachment; ChallengesName=%s" % smart_str(
+    #     ChallengesName
+    # )
+    # response["X-Sendfile"] = smart_str(settings.MEDIA_ROOT + ChallengesName)
+    # messages.info(request, "Your password has been changed successfully!")
+    # return HttpResponse("challenges_view.html")
+
+
+
+
+# def uploadproject(request):
+#     if request.method == "POST":
+#         uploadform = UploadProjectForm(request.POST)
+#         if uploadform.is_valid():
+#             user = request.POST.get("user_id")
+#             details = request.POST.get("details")
+#             submission = request.POST.get("submission")
+#             uploadform = UploadProject(
+#                 user=user, details=details, submission=submission
+#             )
+#             uploadform.save()
+#             return redirect("cha:challenge")
+#     else:
+#         uploadform = UploadProjectForm(instance=request.user)
+#     context = {"uploadform": uploadform}
+#     return render(request, "challenges/uploadproject.html", context)
+
+# uploadform = UploadProjectForm(request.POST)
+# if uploadform.is_valid():
+#     profile = uploadform.save(commit=False)
+#     profile.user = request.user
+#     profile.save()
+# details = request.POST.get("details")
+# submission = request.POST.get("submission")
+# user = request.POST.get("user_id")
+# uploadform = UploadProject.objects.save(
+#     user=user, details=details, submission=submission
+# )
+# else:
+#     uploadform = UploadProjectForm(instance=request.user)
+# context = {"uploadform": uploadform}
+# return render(request, "challenges/uploadproject.html", context)
+
+
+# def uploadproject(request):
+#     return render(request, "challenges/uploadproject.html")
+
+# def registered(request):
+#     if request.method == "GET":
+#         form = UserChallengesForm(request.GET)
+#         if form.is_valid():
+#             form.save(commit=False)
+#             return redirect("challenge")
+#     else:
+#         form = UserChallengesForm()
+#     return render(request, "challenges/challenges_view.html", {"form": form})
+
+
+# class DiscussionCreateView(LoginRequiredMixin,CreateView):
+#     model = Discussion
+#     fields = ["comment", "reply"]
+
+#     def form_valid(self, form):
+#         form.instance.user = self.request.user
+#         return super().form_valid(form)
+
+
+
+
+<!-- <div
+                            class="form-group label-floating">
+                            <label class="form-control-label bmd-label-floating" for="exampleInputTextarea">Tools &
+                                Framework</label>
+                            {{ form.framework|add_class:"form-control"}}
+                            <span class="bmd-help">For example, Django, Rails, Flask etc.</span>
+                    </div> -->
+
+
+
+@login_required
+def challenges_display_view(request):
+    context = {}
+    try:
+        challenges = Challenges.objects.all()
+    except:
+        return "challenge_download"
+    context = {"challenges": challenges}
+    return render(request, "challenges/challenge_download.html", context)
+
+
+@login_required
+def challenges_get_view(request, id=None):
+    context = {}
+    challenge = Challenges.objects.get(id=id)
+    challenges = get_object_or_404(Challenges, id=id)
+    comments = Comment.objects.filter(challenges=challenges, reply=None).order_by("-id")
+    if request.method == "POST":
+        comment_form = CommentForm(request.POST or None)
+        if comment_form.is_valid():
+            content = request.POST.get("content")
+            reply_id = request.POST.get("comment_id")
+            comment_qs = None
+            if reply_id:
+                comment_qs = Comment.objects.get(id=reply_id)
+            comment = Comment.objects.create(
+                challenges=challenges,
+                user=request.user,
+                content=content,
+                reply=comment_qs,
+            )
+            comment.save()
+            return HttpResponseRedirect(challenges.get_instance_url())
+
+    else:
+
+        comment_form = CommentForm()
+    context = {
+        "challenge": challenge,
+        "comments": comments,
+        "comment_form": comment_form,
+    }
+    return render(request, "challenges/challenges_view_download.html", context)
+
+
+def get_instance_url(self):
+    return reverse("challenges.views.challenges_get_view", args=[str(self.id)])
+
+    
+def get_instance_url(self):
+        return reverse("cha:challenges_view_download", args=[self.id])
+
+path(
+        "challenge_download/", views.challenges_display_view, name="challenge_download"
+    ),
+    path(
+        "challenges_view_download/<int:id>",
+        views.challenges_get_view,
+        name="challenges_view_download",
+    ),

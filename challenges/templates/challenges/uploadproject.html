@@ -1,0 +1,93 @@
+{% extends "challenges/header_challenges.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% load widget_tweaks %}
+{% block content %}
+
+
+
+<div class="header-small page-header header-filter " data-parallax="true"
+    style="background-image:url('../../static/challenges/assets/img/reg_bg.jpg'); height:250px;">
+    <div class="linefoot"></div>
+    <div class="container headingmid">
+        <div class="row">
+            <div class="col-md-12 ml-auto mr-auto">
+                <h3 class="title">TechnoPulse</h3>
+                <h1 class="headingpg">Intuit CodeWar</h1>
+                <h3 class="title">150 Registered</h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<section id="middlepages">
+    <form method="POST" enctype="multipart/form-data" id="UploadProjectForm">
+        {% csrf_token %}
+        <div class="container midpoint">
+            <div class="row">
+                <div class="col-md-10">
+                    <h3>Upload Your Final Project</h3>
+                    <p>This information can be used by organizers while shortlisting your idea or team
+                        {{challenge.challenge_name}}</p>
+                </div>
+                <div class="col-sm-0">
+                    <button class="btn btn-success btn-round" style="margin-top:10px;"><i class="fa fa-pencil-square-o"
+                            aria-hidden="true"></i> Edit Submission<div class="ripple-container"></div></button>
+                </div>
+            </div>
+            <hr style="border-top: 1px solid #c1bdbd;margin: 5px 0px !important;">
+
+            <div class="row">
+                <div class="col-lg-3 col-sm-4">
+                    <div class="form-group">
+                        <select class="selectpicker topmg" data-style="select-with-transition" title="Select Project"
+                            data-size="7" value={{form.project}}</select> </div> </div> <div
+                            class="col-lg-12 col-sm-12">
+                            <div class="form-group label-floating">
+                                <label class="form-control-label bmd-label-floating" for="exampleInputTextarea">Your
+                                    Work
+                                    Details</label>
+                                <textarea class="form-control" rows="5" id="exampleInputTextarea"
+                                    {{form.details}}</textarea> <span class="bmd-help">for any message here....</span>
+                    </div>
+                </div>
+
+
+
+                <div class="col-lg-4 col-sm-12">
+                    <div class="form-group form-file-upload form-file-multiple">
+                        <input type="file" multiple="" class="inputFileHidden" {{form.submission}}
+                        <div class="input-group">
+                            <input type="text" class="form-control inputFileVisible"
+                                placeholder="Attached Your Work Files" multiple>
+                            <span class="bmd-help" style="margin-top:35px;">for any message here....</span>
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-link btn-fab btn-info">
+                                    <i class="material-icons">layers</i>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <input type="hidden" name=user_id value="{{user.id}}">
+            <input type="hidden" name=challenges_id value="{{challenge.id}}">
+
+            <hr style="border-top: 1px solid #c1bdbd;margin: 5px 0px !important;">
+
+            <div class="row checkbx">
+                <div class="col-md-12">
+                    <button type="submit" name="value" class="btn btn-primary btn-round" id="value"
+                        value=" Submit">Upload
+                        Project
+                        <div class="ripple-container">
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+</section>
+{%endblock%}
+{% include "user/footer.html" %}

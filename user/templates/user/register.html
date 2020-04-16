@@ -1,0 +1,142 @@
+{% extends "user/base.html" %}
+{%load static%}
+{% load widget_tweaks %}
+{% block content %}
+
+<div class="col-lg-6 col-md-6 col-sm-8 ml-auto mr-auto">
+    <div class="content-section">
+        <form method="POST">
+            {% csrf_token %}
+            <form class="form" method="" action="#">
+                <div class="card card-login card-hidden">
+                    <div class="card-header card-header-primary text-center">
+                        <h4 class="card-title">Sign Up</h4>
+                        <p class="card-description text-center" style="color:#ffffff;">Please fill in the following
+                            details</p>
+                    </div>
+                    <div class="card-body ">
+                        <div class="row">
+
+                            <div class="col-lg-6">
+                                <span class="bmd-form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="material-icons">face</i>
+                                            </span>
+                                        </div>
+                                        {{ form.first_name|add_class:"form-control"|append_attr:"placeholder:First Name"}}
+                                    </div>
+                                </span>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <span class="bmd-form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="material-icons">face</i>
+                                            </span>
+                                        </div>
+                                        {{ form.last_name|add_class:"form-control"|append_attr:"placeholder:Last Name"}}
+                                    </div>
+                                </span>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <span class="bmd-form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="material-icons">email</i>
+                                            </span>
+                                        </div>
+                                        {{ form.email|add_class:"form-control"|append_attr:"placeholder:Email Address"}}
+                                    </div>
+                                </span>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <span class="bmd-form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="material-icons">
+                                                    phone
+                                                </i>
+                                            </span>
+                                        </div>
+                                        {{ form.username|add_class:"form-control"|append_attr:"placeholder:Phone Number"}}
+                                    </div>
+                                </span>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <span class="bmd-form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="material-icons">lock_outline</i>
+                                            </span>
+                                        </div>
+                                        {{ form.password1|add_class:"form-control"|append_attr:"placeholder:Password"}}
+                                    </div>
+                                </span>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <span class="bmd-form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="material-icons">lock_outline</i>
+                                            </span>
+                                        </div>
+                                        {{ form.password2|add_class:"form-control"|append_attr:"placeholder:Confirm Password"}}
+                                    </div>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ERRORS -->
+                    <div>
+                        {% if form.errors %}
+                        <div class="row ">
+                            <div class="col-md-12">
+                                <div class="errormsg">
+                                    {% for field in form %}
+                                    {% for error in field.errors %}
+                                    <p>
+                                        <center>
+                                            <h4>{{ error }}<h4>
+                                        </center>
+                                    </p>
+                                    {% endfor %}
+                                    {% endfor %}
+                                    {% for error in form.non_field_errors %}
+                                    <p>
+                                        <center>
+                                            <h4>{{ error }}<h4>
+                                        </center>
+                                    </p>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+                    </div>
+                    <!-- ERRORS -->
+
+                    <div class="card-footer justify-content-center">
+                        <button class="btn btn-login btn-link btn-lg">Start Now</button>
+                    </div>
+
+
+                    <p class="text-center">Already have an account? <a href="{% url 'login' %}" class="fgpass">Sign
+                            In</a></a></p>
+
+                </div>
+            </form>
+    </div>
+</div>
+{% endblock content %}

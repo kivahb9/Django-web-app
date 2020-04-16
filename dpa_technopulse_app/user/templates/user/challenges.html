@@ -1,0 +1,218 @@
+{% extends "user/header_challenges.html" %}
+{% load static %}
+{% load widget_tweaks %}
+{% block content %}
+
+<!-- <div class="header-small page-header header-filter " data-parallax="true"
+    style="background-image:url('../../static/user/assets/img/reg_bg.jpg'); height:250px;">
+    <div class="linefoot"></div>
+    <div class="container headingmid">
+        <div class="row">
+            <div class="col-md-12 ml-auto mr-auto">
+                <h3 class="title">TechnoPulse</h3>
+                <h1 class="headingpg">Programming Challenges, and Coding Competitions </h1>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+<section id="middlepages">
+
+    <div class="container">
+        <h3 class="challengesheading"><i class="fa fa-circle" aria-hidden="true"></i> Latest Challenges
+            <span class="badge badge-pill badge-danger">006</span>
+        </h3>
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="card card-blog">
+                    <div class="card-header card-header-image">
+                        <a href="#pablo">
+                            <img class="img" src="{% static 'user/assets/img/examples/blog8.jpg' %}">
+                        </a>
+                    </div>
+
+                    <div class="card-footer ">
+                        <div class="author">
+                            <span>TechnoPulse</span>
+                        </div>
+                        <div class="stats ml-auto">
+                            150 <i class="fa fa-users" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <hr style="border-top: 1px solid #c1bdbd;margin: 5px 0px !important;">
+                    <div class="card-body ">
+                        <h4 class="card-title">
+                            <a href="{% url 'challenges_view'/1%}">Challenge 1</a>
+                        </h4>
+                    </div>
+                    <div>
+                        <center><a href="{% url 'challenges_view'%}" class="btn btn-login btn-link btn-sm">Start Now<div
+                                    class="ripple-container"></div></a></center>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="card card-blog">
+                    <div class="card-header card-header-image">
+                        <a href="#pablo">
+                            <img class="img" src="{% static 'user/assets/img/examples/blog8.jpg' %}">
+                        </a>
+                    </div>
+
+                    <div class="card-footer ">
+                        <div class="author">
+                            <span>TechnoPulse</span>
+                        </div>
+                        <div class="stats ml-auto">
+                            150 <i class="fa fa-users" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <hr style="border-top: 1px solid #c1bdbd;margin: 5px 0px !important;">
+                    <div class="card-body ">
+                        <h4 class="card-title">
+                            <a href="{% url 'challenges_view'%}">Challenge 2</a>
+                        </h4>
+                    </div>
+                    <div>
+                        <center><a href="{% url 'challenges_view'%}" class="btn btn-login btn-link btn-sm">Start Now<div
+                                    class="ripple-container"></div></a></center>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="card card-blog">
+                    <div class="card-header card-header-image">
+                        <a href="#pablo">
+                            <img class="img" src="{% static 'user/assets/img/examples/blog8.jpg' %}">
+                        </a>
+                    </div>
+
+                    <div class="card-footer ">
+                        <div class="author">
+                            <span>TechnoPulse</span>
+                        </div>
+                        <div class="stats ml-auto">
+                            150 <i class="fa fa-users" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <hr style="border-top: 1px solid #c1bdbd;margin: 5px 0px !important;">
+                    <div class="card-body ">
+                        <h4 class="card-title">
+                            <a href="{% url 'challenges_view'%}">Challenge 3</a>
+                        </h4>
+                    </div>
+                    <div>
+                        <center><a href="{% url 'challenges_view'%}" class="btn btn-login btn-link btn-sm">Start Now<div
+                                    class="ripple-container"></div></a></center>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="card card-blog">
+                    <div class="card-header card-header-image">
+                        <a href="#pablo">
+                            <img class="img" src="{% static 'user/assets/img/examples/blog8.jpg' %}">
+                        </a>
+                    </div>
+
+                    <div class="card-footer ">
+                        <div class="author">
+                            <span>TechnoPulse</span>
+                        </div>
+                        <div class="stats ml-auto">
+                            150 <i class="fa fa-users" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <hr style="border-top: 1px solid #c1bdbd;margin: 5px 0px !important;">
+                    <div class="card-body ">
+                        <h4 class="card-title">
+                            <a href="{% url 'challenges_view'%}">Challenge 4</a>
+                        </h4>
+                    </div>
+                    <div>
+                        <center><a href="{% url 'challenges_view'%}" class="btn btn-login btn-link btn-sm">Start Now<div
+                                    class="ripple-container"></div></a></center>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="card card-blog">
+                    <div class="card-header card-header-image">
+                        <a href="#pablo">
+                            <img class="img" src="{% static 'user/assets/img/examples/blog8.jpg' %}">
+                        </a>
+                    </div>
+
+                    <div class="card-footer ">
+                        <div class="author">
+                            <span>TechnoPulse</span>
+                        </div>
+                        <div class="stats ml-auto">
+                            150 <i class="fa fa-users" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <hr style="border-top: 1px solid #c1bdbd;margin: 5px 0px !important;">
+                    <div class="card-body ">
+                        <h4 class="card-title">
+                            <a href="{% url 'challenges_view'%}">Challenge 5</a>
+                        </h4>
+                    </div>
+                    <div>
+                        <center><a href="{% url 'challenges_view'%}" class="btn btn-login btn-link btn-sm">Start Now<div
+                                    class="ripple-container"></div></a></center>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="card card-blog">
+                    <div class="card-header card-header-image">
+                        <a href="#pablo">
+                            <img class="img" src="{% static 'user/assets/img/examples/blog8.jpg' %}">
+                        </a>
+                    </div>
+
+                    <div class="card-footer ">
+                        <div class="author">
+                            <span>TechnoPulse</span>
+                        </div>
+                        <div class="stats ml-auto">
+                            150 <i class="fa fa-users" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <hr style="border-top: 1px solid #c1bdbd;margin: 5px 0px !important;">
+                    <div class="card-body ">
+                        <h4 class="card-title">
+                            <a href="{% url 'challenges_view'%}">Challenge 6</a>
+                        </h4>
+                    </div>
+                    <div>
+                        <center><a href="{% url 'challenges_view'%}" class="btn btn-login btn-link btn-sm">Start Now<div
+                                    class="ripple-container"></div></a></center>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+</section>
+
+{% endblock %}

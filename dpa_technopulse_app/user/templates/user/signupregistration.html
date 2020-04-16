@@ -1,0 +1,197 @@
+{% extends "user/layout.html" %}
+{% load static %}
+{% load widget_tweaks %}
+{% block content %}
+
+
+<section id="middlepages">
+        <div class="container midpoint">
+                <div class="row">
+                        <div class="col-md-12">
+                                <h3>Please fill in the following details</h3>
+                                <p>This information can be used by organizers while shortlisting your idea or team</p>
+                        </div>
+                </div>
+                <hr style="border-top: 1px solid #c1bdbd;margin: 5px 0px !important;">
+
+
+                <div class="row">
+                        <div class="col-md-12">
+                                <h2><i class="fa fa-user-circle" aria-hidden="true"></i> Personal Details</h2>
+                        </div>
+                </div>
+
+                <form method="POST" enctype="multipart/form-data" id="SignUpRegistrationForm">
+                        {% csrf_token %}
+                        <div class="row">
+
+                                <div class="col-lg-3 col-sm-4">
+                                        <div class="form-group">
+                                                <select class="selectpicker topmg" data-style="select-with-transition"
+                                                        title="Gender" data-size="7" value={{form.gender}}</select> <!--
+                                                        {{ form.gender|add_class:"form-control select2 selectpicker topmg"|append_attr:"placeholder:Gender"}}
+                                                        -->
+
+                                        </div>
+
+                                </div>
+
+
+                                <div class="col-lg-3 col-sm-4">
+                                        <div class="form-group">
+                                                <label for="exampleInput1" class="bmd-label-floating">City</label>
+                                                {{ form.city|add_class:"form-control"}}
+                                        </div>
+                                </div>
+
+                        </div>
+
+                        <div class="row">
+                                <div class="col-md-12">
+                                        <h2><i class="fa fa-book" aria-hidden="true"></i> Educational Details</h2>
+                                </div>
+                        </div>
+
+
+                        <div class="row">
+                                <div class="col-lg-3 col-sm-4">
+                                        <div class="form-group">
+                                                <label for="exampleInput1" class="bmd-label-floating">Institute</label>
+                                                {{ form.institute|add_class:"form-control"}}
+                                        </div>
+                                </div>
+
+                                <div class="col-lg-3 col-sm-4">
+                                        <div class='row'>
+                                                <select class="selectpicker topmg" data-style="select-with-transition"
+                                                        title="Graduation Year" data-size="7"
+                                                        value={{form.graduation_year}}</select> </div> </select> </div>
+                                                        <div class="col-lg-3 col-sm-4">
+                                                        <select class="selectpicker topmg"
+                                                                data-style="select-with-transition"
+                                                                title="Bachelors degree " data-size="7"
+                                                                value={{form.bachelors_degree}} </select> </div> </div>
+                                                                <div class="row">
+                                                                <div class="col-md-12">
+                                                                        <h2><i class="fa fa-suitcase"
+                                                                                        aria-hidden="true"></i>
+                                                                                Professional Details</h2>
+                                                                </div>
+                                        </div>
+
+                                        <div class="row">
+                                                <div class="col-lg-3 col-sm-4">
+                                                        <div class="form-group">
+                                                                <label for="exampleInput1"
+                                                                        class="bmd-label-floating">Months of
+                                                                        experience</label>
+                                                                {{ form.experience|add_class:"form-control"}}
+                                                        </div>
+                                                </div>
+
+                                                <div class="col-lg-3 col-sm-4">
+                                                        <div class="form-group">
+                                                                <label for="exampleInput1"
+                                                                        class="bmd-label-floating">Company
+                                                                        Name</label>
+                                                                {{ form.company|add_class:"form-control"}}
+                                                        </div>
+                                                </div>
+
+
+                                                <div class="col-lg-3 col-sm-4">
+                                                        <div class="form-group">
+                                                                <label for="exampleInput1"
+                                                                        class="bmd-label-floating">Job Title</label>
+                                                                {{ form.job_title|add_class:"form-control"}}
+                                                        </div>
+                                                </div>
+                                        </div>
+
+
+
+
+                                        <div class="row">
+                                                <div class="col-md-12">
+                                                        <h2><i class="fa fa-list" aria-hidden="true"></i> Other Details
+                                                        </h2>
+                                                </div>
+                                        </div>
+
+                                        <div class="row">
+                                                <div class="col-lg-3 col-sm-4">
+                                                        <select class="selectpicker topmg"
+                                                                data-style="select-with-transition" title="State"
+                                                                data-size="7" value={{form.state}}</select> </div> <div
+                                                                class="col-lg-3 col-sm-4">
+                                                                <div
+                                                                        class="form-group form-file-upload form-file-multiple">
+                                                                        <div class="form-group">
+                                                                                <input type="file" multiple=""
+                                                                                        class="inputFileHidden"
+                                                                                        {{form.resume}} <div
+                                                                                        class="input-group">
+                                                                                <input type="text"
+                                                                                        class="form-control inputFileVisible"
+                                                                                        placeholder="Attached Resume">
+                                                                                <span class="input-group-btn">
+                                                                                        <button type="button"
+                                                                                                class="btn btn-link btn-fab">
+                                                                                                <i
+                                                                                                        class="material-icons">attach_file</i>
+                                                                                        </button>
+                                                                                </span>
+                                                                        </div>
+                                                                </div>
+                                                </div>
+                                        </div>
+                                </div>
+
+                                <hr style="border-top: 1px solid #c1bdbd;margin: 5px 0px !important;">
+                                <div class="row checkbx">
+                                        <div class="col-md-12">
+                                                <div class="form-check">
+                                                        <label class="form-check-label">
+                                                                <!-- <input class="form-check-input" type="checkbox"
+                                                                                value={{form.agreement}}> -->
+                                                                <input class="form-check-input" type="checkbox"
+                                                                        onchange="document.getElementById('value').disabled = !this.checked;" />
+                                                                By
+                                                                participating
+                                                                I agree
+                                                                to
+                                                                applicable
+                                                                terms
+                                                                and
+                                                                conditions.
+                                                                <span class="form-check-sign">
+                                                                        <span class="check"></span>
+                                                                </span>
+                                                        </label>
+                                                </div>
+                                                <div class="row checkbx">
+                                                        <div class="col-md-12">
+                                                                <!-- <button class="btn btn-primary btn-round">Submit
+                                                                                <div class="ripple-container">
+                                                                                </div>
+                                                                        </button> -->
+                                                                <button type="submit" name="value"
+                                                                        class="btn btn-primary btn-round" id="value"
+                                                                        value=" Submit" disabled>Submit
+                                                                        <div class="ripple-container">
+                                                                        </div>
+                                                                </button>
+                                                        </div>
+                                                </div>
+
+                                        </div>
+                                </div>
+                        </div>
+        </div>
+        </form>
+        </div>
+        </div>
+
+</section>
+
+{% endblock %}

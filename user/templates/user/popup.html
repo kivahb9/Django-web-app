@@ -1,0 +1,20 @@
+{%load static%}
+{% load widget_tweaks %}
+<div class="modal fade" id="smallAlertModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-small" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i
+                        class="material-icons">clear</i></button>
+            </div>
+            <div class="modal-body text-center">
+                <center><img src="{% static 'user/assets/img/mark.gif' %}" width="30%" class="img-fluid"></center>
+                <h5>Write a Message Here...</h5>
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button type="button" class="btn btn-link" data-dismiss="modal">Never mind</button>
+                <button type="button" class="btn btn-success btn-link">Yes</button>
+            </div>
+        </div>
+    </div>
+</div>

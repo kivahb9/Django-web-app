@@ -1,0 +1,34 @@
+HTML file
+
+{% extends "user/base.html" %}
+{% block content %}
+
+<div class="col-lg-4 col-md-6 col-sm-8 ml-auto mr-auto">
+    <div class="card card-login card-hidden">
+        <div class="card-header card-header-primary text-center">
+            <h4 class="card-title">Email Sent</h4>
+            <p class="card-description text-center" style="color:#ffffff;">Thank You! for subscribing us, we will notify
+                you with furthur instructions </p>
+        </div>
+
+        <p class="text-center"><a href="{% url 'technopulse_home' %}" class="fgpass">Take me back!</a></p>
+    </div>
+</div>
+
+{% endblock %}
+
+
+VIEWS.py
+def subscriptiondone(request):
+    form = SubscriberForm(request.POST or None)
+    INFO = False
+    if request.method == "POST":
+        if form.is_valid():
+            form.save()
+            form = SubscriberForm()
+            INFO = True
+    return render(request, "user/subscription_done.html", {"form": form})
+
+
+urls.py
+path("done/", user_views.subscriptiondone, name="subscription_done"),

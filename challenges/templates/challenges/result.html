@@ -1,0 +1,159 @@
+{% extends "challenges/header_challenges.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% load widget_tweaks %}
+{% block content %}
+
+
+
+<div class="header-small page-header header-filter " data-parallax="true"
+    style="background-image:url('../../static/challenges/assets/img/reg_bg.jpg'); height:250px;">
+    <div class="linefoot"></div>
+    <div class="container headingmid">
+        <div class="row">
+            <div class="col-md-12 ml-auto mr-auto">
+                <h3 class="title">TechnoPulse</h3>
+                <h1 class="headingpg">Result Announcement</h1>
+                <h3 class="title"></h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<section id="middlepages">
+    <form method="POST" enctype="multipart/form-data" id="UploadProjectForm">
+        {% csrf_token %}
+        <div class="container midpoint">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>Result List</h3>
+                    <p>Technopulse hackathon results</p>
+                </div>
+            </div>
+            <hr style="border-top: 1px solid #c1bdbd;margin: 5px 0px !important;">
+
+
+
+
+
+            <!-- <div class="row">
+                <div class="col-lg-3 col-sm-4">
+                    <select class="selectpicker topmg" data-style="select-with-transition" title="Select Project"
+                        data-size="7" value={{form.project}}>
+                    </select>
+                </div>
+
+                <div class="col-lg-9 col-sm-9">
+                    <ul id="category_result">
+                        <li>
+                            <h3 style="color: #00d27a;"><i class="fa fa-circle" aria-hidden="true"></i> In the money<h3>
+                        </li>
+                        <li>
+                            <h3 style="color: #b88121;"><i class="fa fa-circle" aria-hidden="true"></i> Gold<h3>
+                        </li>
+                        <li>
+                            <h3 style="color: #838280;"><i class="fa fa-circle" aria-hidden="true"></i> Silver<h3>
+                        </li>
+                        <li>
+                            <h3 style="color: #8e5b3d;"><i class="fa fa-circle" aria-hidden="true"></i> Bronze<h3>
+                        </li>
+                    </ul>
+                </div>
+            </div> -->
+
+
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="table-responsive resulttable" style="margin-top:50px;">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">#</th>
+                                    <th>Developer Name</th>
+                                    <th>Score</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for ranking in object_list %}
+                                <tr>
+                                    <td class="text-center">{{ranking.id}}</td>
+                                    <td> {{ranking.developer_name}} </td>
+                                    <td> {{ranking.score}} </td>
+                                    <td> </td>
+
+                                </tr>
+
+                                <!-- <tr>
+                                    <td class="text-center"> 2 </td>
+                                    <td> Zoopal2OxfordRPZ </td>
+                                    <td> 1.91906 </td>
+                                    <td> <i class="fa fa-circle inthemoney" aria-hidden="true"></i> </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td class="text-center"> 3 </td>
+                                    <td> rda </td>
+                                    <td> 1.89218 </td>
+                                    <td> <i class="fa fa-circle inthemoney" aria-hidden="true"></i> </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td class="text-center"> 4 </td>
+                                    <td> kce330 </td>
+                                    <td> 1.86351 </td>
+                                    <td> <i class="fa fa-circle gold" aria-hidden="true"></i> </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td class="text-center"> 5 </td>
+                                    <td> Renjie Qian </td>
+                                    <td> 2.26307 </td>
+                                    <td> <i class="fa fa-circle gold" aria-hidden="true"></i> </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td class="text-center"> 6 </td>
+                                    <td> Zoopal2OxfordRPZ </td>
+                                    <td> 1.91906 </td>
+                                    <td> <i class="fa fa-circle silver" aria-hidden="true"></i> </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td class="text-center"> 7 </td>
+                                    <td> rda </td>
+                                    <td> 1.89218 </td>
+                                    <td> <i class="fa fa-circle silver" aria-hidden="true"></i> </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td class="text-center"> 8 </td>
+                                    <td> kce330 </td>
+                                    <td> 1.86351 </td>
+                                    <td> <i class="fa fa-circle bronze" aria-hidden="true"></i> </td>
+
+                                </tr> -->
+                                {% endfor %}
+
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </form>
+</section>
+{% endblock %}
+{% include "user/footer.html" %}

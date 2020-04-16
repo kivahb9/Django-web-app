@@ -1,0 +1,54 @@
+                    
+index Block                    
+                    <!-- <center><a href="{% url 'register' %}" class="btn btn-br btn-round">Get Started</a></center>
+ -->
+
+
+headerandfooter block
+                     <!-- <li class="nav-item">
+                        <a href="{% url 'login' %}" class="nav-link">
+                            <i class="material-icons">lock</i>
+                            Sign In</a>
+                    </li>
+
+                    <li class="button-container nav-item iframe-extern">
+                        <a href="{% url 'register' %}" class="btn btn-info regbtn">
+                            Sign Up
+                        </a>
+                    </li> -->
+
+
+# def form_valid(self, form):
+    #     object = form.save(commit=False)
+    #     object.owner = self.request.user
+    #     form.save()
+    #     return super(SignUpRegistrationCreateView, self).form_valid(form)
+
+    # def login_success(request):
+    #     """
+    #     Redirects users based on whether they are in the admins group
+    #     """
+    #     context = {}
+    #     user = get_object_or_404(User, id=id)
+    #     signupregistration = SignUpRegistration.objects.get(user=user)
+    #     if SignUpRegistration.objects.filter(p).exists():
+    #         # user is an admin
+    #         return redirect("challenge")
+    #     else:
+    #         return redirect("signupregistration")
+
+    #     if self.request.user.is_authenticated:
+    #         form.instance.user = self.request.user
+    #     return super().form_valid(form)
+
+    # def login_success(self, form, request, id=None):
+    #     user = get_object_or_404(User, id=id)
+    #     # signupregistration = SignUpRegistration.objects.get(user=user)
+    #     if request.method == "GET":
+    #         form = SignUpRegistrationForm(request.GET)
+    #         if form.is_valid():
+    #             instance = form.save(commit=False)
+    #             if SignUpRegistration.objects.filter(user=instance.user).exists():
+    #                 return redirect("challenge")
+    #             else:
+    #                 return redirect("signupregistration")

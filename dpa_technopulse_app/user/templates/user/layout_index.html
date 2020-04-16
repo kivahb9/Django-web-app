@@ -1,0 +1,247 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from demos.creative-tim.com/material-kit-pro/presentation.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 01 Feb 2019 07:41:25 GMT -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="76x76" href="{% static 'user/assets/img/apple-icon.png' %}">
+    <link rel="icon" type="image/png" href="{% static 'user/assets/img/favicon.png' %}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+        TechnoPulse - Hiring Hackathon
+    </title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
+        name='viewport' />
+    <!-- Extra details for Live View on GitHub Pages -->
+    <!-- Canonical SEO -->
+    <link rel="canonical" href="https://www.creative-tim.com/product/material-kit-pro" />
+
+
+    <link href="{% static 'user/assets/css/techstyle.css' %}" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"
+        rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css"
+        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="../../maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+    <!-- CSS Files -->
+    <link href="{% static 'user/assets/css/material-kit.min1036.css' %}" rel="stylesheet" />
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link href="{% static 'user/assets/demo/demo.css' %}" rel="stylesheet" />
+    <link href="{% static 'user/assets/demo/vertical-nav.css' %}" rel="stylesheet" />
+    <!-- Google Tag Manager -->
+
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                '../../www.googletagmanager.com/gtm5445.html?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-NKDMSK6');
+    </script>
+    <!-- End Google Tag Manager -->
+</head>
+
+<body class="presentation-page sidebar-collapse">
+    <!-- Extra details for Live View on GitHub Pages -->
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKDMSK6" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <nav class="navbar navbar-color-on-scroll navbar-transparent    fixed-top  navbar-expand-lg " color-on-scroll="100"
+        id="sectionsNav">
+        <div class="container">
+            <div class="navbar-translate">
+                <a class="navbar-brand" href="{% url 'technopulse_home' %}">
+                    <img src="{% static 'user/assets/img/logo_bk.png' %}" class="img-responsive">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="#aboutus" class="nav-link">About Us</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#whytechnopulse" class="nav-link">Why TechnoPulse</a>
+                    </li>
+
+                    <!--<li class="nav-item">
+            <a href="#testimonials" class="nav-link">Our Developer</a>
+          </li>-->
+
+                    <li class="nav-item">
+                        <a href="{% url 'login' %}" class="nav-link">
+                            <i class="material-icons">lock</i>
+                            Sign In</a>
+                    </li>
+
+                    <li class="button-container nav-item iframe-extern">
+                        <a href="{% url 'register' %}" class="btn btn-info regbtn">
+                            Sign Up
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--Below block will be rendered by other htmls-->
+    {% block content %}{% endblock %}
+
+    <!-- Footer Starts here -->
+    <footer class="footer footer-white">
+        <div class="container">
+            <a class="footer-brand" href="#">
+                <img src="{% static 'user/assets/img/logo_wh.svg' %}" class="img-responsive" width="120px">
+            </a>
+            <ul class="pull-center midtext">
+                <li>
+                    @2019 Technopulse.com All rights reserved | <a href="#">Terms of Use</a> | <a href="#">Privacy
+                        Policy</a>
+                </li>
+            </ul>
+
+            <ul class="social-buttons footersocial">
+                <li>
+                    <a href="#" target="_blank" class="btn btn-just-icon btn-link btn-facebook">
+                        <i class="fa fa-facebook"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" target="_blank" class="btn btn-just-icon btn-link btn-twitter">
+                        <i class="fa fa-twitter"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" target="_blank" class="btn btn-just-icon btn-link btn-google">
+                        <i class="fa fa-google-plus"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" target="_blank" class="btn btn-just-icon btn-link btn-linkedin">
+                        <i class="fa fa-linkedin"></i>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </footer>
+    <!--   Core JS Files   -->
+    <script src="{% static 'user/assets/js/core/jquery.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'user/assets/js/core/popper.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'user/assets/js/core/bootstrap-material-design.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'user/assets/js/plugins/moment.min.js' %}"></script>
+    <!--	Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
+    <script src="{% static 'user/assets/js/plugins/bootstrap-datetimepicker.js' %}" type="text/javascript"></script>
+    <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+    <script src="{% static 'user/assets/js/plugins/nouislider.min.js' %}" type="text/javascript"></script>
+    <!--  Google Maps Plugin    -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGat1sgDZ-3y6fFe6HD7QUziVC6jlJNog"></script>
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="../../buttons.github.io/buttons.js"></script>
+    <!--	Plugin for Sharrre btn -->
+    <script src="{% static 'user/assets/js/plugins/jquery.sharrre.js' %}" type="text/javascript"></script>
+    <!--	Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  -->
+    <script src="{% static 'user/assets/js/plugins/bootstrap-tagsinput.js' %}"></script>
+    <!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
+    <script src="{% static 'user/assets/js/plugins/bootstrap-selectpicker.js' %}" type="text/javascript"></script>
+    <!--	Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
+    <script src="{% static 'user/assets/js/plugins/jasny-bootstrap.min.js' %}" type="text/javascript"></script>
+    <!--	Plugin for Small Gallery in Product Page -->
+    <script src="{% static 'user/assets/js/plugins/jquery.flexisel.js' %}" type="text/javascript"></script>
+    <!-- Plugins for presentation and navigation  -->
+    <script src="{% static 'user/assets/demo/modernizr.js' %}" type="text/javascript"></script>
+    <script src="{% static 'user/assets/demo/vertical-nav.js' %}" type="text/javascript"></script>
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="../../buttons.github.io/buttons.js"></script>
+    <!-- Js With initialisations For Demo Purpose, Don't Include it in Your Project -->
+    <script src="{% static 'user/assets/demo/demo.js' %}" type="text/javascript"></script>
+    <!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
+    <script src="{% static 'user/assets/js/material-kit.min1036.js' %}" type="text/javascript"></script>
+    <script>
+        $(document).ready(function () {
+
+
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-46172202-1']);
+            _gaq.push(['_trackPageview']);
+
+            (function () {
+                var ga = document.createElement('script');
+                ga.type = 'text/javascript';
+                ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(ga, s);
+            })();
+
+            // Facebook Pixel Code Don't Delete
+            ! function (f, b, e, v, n, t, s) {
+                if (f.fbq) return;
+                n = f.fbq = function () {
+                    n.callMethod ?
+                        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                };
+                if (!f._fbq) f._fbq = n;
+                n.push = n;
+                n.loaded = !0;
+                n.version = '2.0';
+                n.queue = [];
+                t = b.createElement(e);
+                t.async = !0;
+                t.src = v;
+                s = b.getElementsByTagName(e)[0];
+                s.parentNode.insertBefore(t, s)
+            }(window,
+                document, 'script', '../../connect.facebook.net/en_US/fbevents.js');
+
+            try {
+                fbq('init', '111649226022273');
+                fbq('track', "PageView");
+
+            } catch (err) {
+                console.log('Facebook Track Error:', err);
+            }
+
+        });
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=111649226022273&amp;ev=PageView&amp;noscript=1" />
+    </noscript>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            materialKitDemo.presentationAnimations();
+        });
+    </script>
+</body>
+
+<!-- Mirrored from demos.creative-tim.com/material-kit-pro/presentation.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 01 Feb 2019 07:41:51 GMT -->
+
+</html>

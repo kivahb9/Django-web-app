@@ -1,0 +1,314 @@
+{% if request.user.is_authenticated %}
+{% include "challenges/header_challenges1.html" %}
+{% else %}
+{% include "user/headerandfooter1.html" %}
+{% endif %}
+{% load static %}
+{% load widget_tweaks %}
+{% block content %}
+
+<div class="page-header header-filter clear-filter"
+    style="background-image: url('../../static/user/assets/img/banner.jpg');">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 ml-auto mr-auto">
+                <div class="brand">
+                    <h3 class="title">Compete. Code. Collaborate.</h3>
+                    <div class="devplist">
+                        <center><img src="{% static 'user/assets/img/35no.png' %}" width="150px"></center>
+                        <h5>
+                            <img src="data:image/png;base64,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"
+                                style="width:60px;">
+                        </h5>
+                    </div>
+                    <h1 style="padding-top: 27px !important; padding-bottom:10px !important;">TechnoPulse an online
+                        coding hackathon organized by Decimal Point Analytics to showcase</h1>
+                    <h1>your <span>Machine Learning</span> skills </h1>
+                    <h4 style="padding-top: 27px !important;">Enter your email address and subscribe now! </h4>
+                    <!--<center><a href="signin.php" class="btn btn-br btn-round">Get Start</a></center>-->
+
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="row sub">
+                            <div class="col-md-8 ml-auto mr-auto">
+                                <div class="input-group">
+                                    {{ form.email|add_class:"form-control"|append_attr:"placeholder:Email address.."}}
+                                    <div class="input-group-btn">
+                                        <!-- <button class="btn btn-br btn-round" data-toggle="modal"
+                                                data-target=" #smallAlertModal">Submit</button> -->
+                                        <button type=" submit" class="btn btn-br btn-round" data-toggle="modal"
+                                            data-target="#smallAlertModal">Subscribe</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+
+<!--Messages starts here-->
+{% if messages %}
+<div class="modal fade" id="smallAlertModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-small" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <a href="{% url 'technopulse_home' %}" class="close" aria-hidden="true"><i
+                        class="material-icons">clear</i></a>
+            </div>
+            {% for message in messages %}
+            <div {% if message.tags %} class="modal-body text-center {{message.tags}}" {%endif%}>
+                <center><img src="{% static 'user/assets/img/mark.gif' %}" ; class="img-fluid">
+                </center>
+                <h3>{{ message }}</h3>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</div>
+{% endif %}
+<!--Messages ends here-->
+
+
+
+<!-------about us----------->
+<div class="main main-raised">
+    <div class="section" id="whytechnopulse">
+        <div class="container">
+            <h1>Why TechnoPulse</h1>
+            <div class="borderbx"></div>
+
+            <div class="container hack">
+                <p class="text-center">It is an amazing opportunity to showcase your machine learning skills
+                    while
+                    tackling the real-world challenges.<br>
+                    The Top 10 performers stand a chance to land a job in the Machine Learning team within
+                    Decimal Point
+                    Analytics.<br><br>
+                    Grab this amazing opportunity to display your coding skills.<br></p>
+                <p class="text-center"
+                    style="font-size: 30px !important;font-weight: 300;line-height: 36px !important;font-style: italic;">
+                    What are you waiting for?</p>
+                <div class="row">
+                    <div class="col-md-3">
+                        <center><img src="{% static 'user/assets/img/hack_for_humanity.png' %}" class="img-fluid">
+                        </center>
+                        <div class="text">
+                            <h5 class="text-center">Hack for <span>Humanity</span></h5>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <center><img src="{% static 'user/assets/img/hack_for_you.png' %}" class="img-fluid">
+                        </center>
+                        <div class="text">
+                            <h5 class="text-center">Hack for <span>You</span></h5>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <center><img src="{% static 'user/assets/img/hack_for_future.png' %}" class="img-fluid">
+                        </center>
+                        <div class="text">
+                            <h5 class="text-center">Hack for The <span>Future</span></h5>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <center><img src="{% static 'user/assets/img/hack_for_fun.png' %}" class="img-fluid">
+                        </center>
+                        <div class="text">
+                            <h5 class="text-center">Hack for <span>Fun</span></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="why_info">
+                        <h1>10<span>+</span></h1>
+                        <h3>Performers Stands Chance to Land a Job</h3>
+                        <div class="borderbx" style="margin: 0 auto;"></div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="why_info">
+                        <h1>4<span>+</span></h1>
+                        <h3>Challenges</h3>
+                        <div class="borderbx" style="margin: 0 auto;"></div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="why_info">
+                        <h1>
+                            &#8734;
+                        </h1>
+                        <h3>Hours of Support</h3>
+                        <div class="borderbx" style="margin: 0 auto;"></div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="why_info">
+                        <h1>30<span>+</span></h1>
+                        <h3>Days</h3>
+                        <div class="borderbx" style="margin: 0 auto;"></div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
+
+<!-----------about us end------------->
+
+
+<!--<section id="fullwidth" style="padding-top: 50px;">
+ <img src="assets/img/peoplebg.png" class="img-fluid">
+</section>-->
+
+
+
+
+
+
+<!-------about us----------->
+<div class="main main-raised">
+    <div class="section" id="aboutus" style="margin-top: 50px;">
+        <div class="container">
+            <h1>About Decimal Point Analytics</h1>
+            <div class="borderbx"></div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="ab">16 years ago, we started as a financial research provider serving the
+                        financial
+                        services industry across Europe, UK and the USA. Financial sector evolves at a rapid
+                        pace and we
+                        help our clients navigate new technologies. Today we create bespoke data management and
+                        automation solution which leverages Machine learning and Artificial intelligence for our
+                        clients. You can read more about us here <a href="https://www.decimalpointanalytics.com/"
+                            style="color:#3B77F5;">www.decimalpointanalytics.com</a>
+
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="features-1">
+                <div class="row">
+
+                    <div class="col-md-3">
+                        <div class="info">
+                            <div class="infoicon">
+                                <div class="midbx">
+                                    <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <h3>Igniting</h3>
+                            <div class="borderbx" style="margin: 0 auto;"></div>
+                            <p>DPA strive to help firms operating in the financial services industry with
+                                algorithmic
+                                solutions which automate the extraction of research intelligence</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="info">
+                            <div class="infoicon">
+                                <div class="midbx">
+                                    <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <h3>Experienced</h3>
+                            <div class="borderbx" style="margin: 0 auto;"></div>
+                            <p>We use the tools of machine learning and big data to glean insights that human
+                                researchers cannot independently generate! </p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="info">
+                            <div class="infoicon">
+                                <div class="midbx">
+                                    <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <h3>Reach</h3>
+                            <div class="borderbx" style="margin: 0 auto;"></div>
+                            <p>Our cutting-edge technologies are designed and delivered by a team of
+                                professionals with
+                                deep expertise in data</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="info">
+                            <div class="infoicon">
+                                <div class="midbx">
+                                    <i class="fa fa-users" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <h3>Dedicated Support</h3>
+                            <div class="borderbx" style="margin: 0 auto;"></div>
+                            <p>Provides advance statistics and large-scale programming, as well as substantial
+                                experience of the financial markets.</p>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-----------about us end------------->
+
+<!-- Displaying of messages-->
+
+<!-- <div class="modal fade" id="smallAlertModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-small" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i
+                        class="material-icons">clear</i></button>
+            </div>
+            <div {% if message.tags %} class="modal-body text-center {{message.tags}}" {%endif%}>
+                {% if messages %}
+                {% for message in messages %}
+                <center><img src="{% static 'user/assets/img/mark.gif' %}" class="img-fluid"></center>
+                <h5>{{ message }}</h5>
+            </div>
+            {% endfor %}
+            <div class="modal-footer justify-content-center">
+                <button type="button" class="btn btn-link" data-dismiss="modal">Never mind</button>
+                <button type="button" class="btn btn-success btn-link">Yes</button>
+            </div>
+            {%endif%}
+        </div>
+    </div>
+</div> -->
+
+<!-- Displaying of messages ends here -->
+
+{% endblock %}
+{% include "user/footer.html" %}
