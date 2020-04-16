@@ -1,4 +1,4 @@
-# Technopulse - Online hackathon
+# Techno - Online hackathon
 
 This is an hackathon platform built to attract data science enthusiast by encouraging them to participate and take up challenges.
 
@@ -210,14 +210,3 @@ DATABASES = {
 
 * [Django](https://www.djangoproject.com/) --The web framework used to build webapps quickly.
 
-## Authors
-
-* **Developer: Bhavik Prajapati**
-* **Analyst: Sarita Maurya**
-* **Team Leader: Shravankumar Suvarna**
-* **Reporting Manager: Rikesh Patel**
-	
-## License
-
-[Decimal Point Analytics](https://www.decimalpointanalytics.com) © Copyright (c) 2019 Decimal Point Analytics, Inc.
-All rights reserved.
