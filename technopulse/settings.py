@@ -91,8 +91,7 @@ DATABASES = {
         "NAME": "technopulse",
         "USER": "root",  # config['USER']
         "PASSWORD": "admin@123",  # config['PASSWORD']
-        "HOST": "localhost",
-        "PORT": "3306",
+        "HOST": "cclproject.azurewebsites.net",
     }
 }
 
