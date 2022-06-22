@@ -28,7 +28,7 @@ lazy-object-proxy==1.4.3
 MarkupPy==1.14
 mccabe==0.6.1
 mysqlclient==1.4.2.post1
-numpy==1.17.2
+numpy==1.22.0
 odfpy==1.4.1
 openpyxl==3.0.3
 pandas==0.25.1
